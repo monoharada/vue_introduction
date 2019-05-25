@@ -4,7 +4,7 @@ const
   config = require('../config'),
   pug = require('./pug');
   scss = require('./css');
-      
+const $ = require('./gulp/plugin');
 
 
 
