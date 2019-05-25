@@ -1,0 +1,52 @@
+style(scoped="").
+  .conteiner {
+  padding:1.2rem 2%;
+  }
+  .text {
+  padding: 1em;
+  border-radius:4px;
+  background: #f2f2f2;
+  margin-bottom: 1rem;
+  }
+  .text-error{
+  counter-reset: red;
+  background: #feeeea;
+  }
+  [v-cloak]{
+    display: none;
+  }
+//- link(rel="stylesheet", href="./css/scss/vue-class-style.css")
+link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.3/css/bootstrap.css")
+script(src="https://cdn.jsdelivr.net/npm/vue")
+//- script(src="./js/vue-class-style.js")
+#app(v-cloak)
+  .container
+    h1.title {{titleMessage}}
+    p.text(v-for="message in messages" :class="{ 'text-error': message.error }")
+      | {{ message.text }}
+  .container.pt-3
+    h1.h3.mb-4 progress
+    .progress
+      .progress-bar(role="progressbar" :style="{width: progress + '%'}")
+  
+
+
+script.
+  const app = new Vue({
+    el:'#app',
+    data:{
+
+        messages: [{
+                text: 'This is normal message.',
+                error: false
+            },
+            {
+                text: 'This is ERROR message!',
+                error: true
+            },
+        ],
+        progress: 70,
+        titleMessage: 'Hello world'
+    }
+    })
+  

@@ -1,0 +1,30 @@
+{
+    "index": "vue-class-style.html",
+    "paths": {
+        "scss": "./src/scss",
+        "css": "./public/css",
+        "pug": "./src/pug/",
+        "html": "./public/",
+        "js": "./dist/js/"
+    },
+    "dir":{
+        "scss": "**/*.scss",
+        "pug": "**/*.pug",
+        "_pug": "**/_*.pug",
+        "js": "**/*.js",
+        "html": "**/*.html",
+        "css": "**/*.css"
+    },
+    "tasks": {
+        "css": {
+            "sassOptions": {
+                "outputStyle": "expanded"
+            }
+        },
+        "pug":{
+            "pugOptions":{
+                "pretty": true
+            }
+        }
+    }
+}
