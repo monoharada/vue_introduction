@@ -1,0 +1,84 @@
+style. 
+  .container-fluid {
+    padding: 1rem 2%;
+  }
+  .table {
+    table-layout: fixed;
+  }
+  .table tr td {
+    vertical-align: middle;
+  }
+
+  .table tr td {
+    word-wrap: break-word;
+  }
+  input[type="file"] {
+    overflow: hidden;
+  }
+link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T", crossorigin="anonymous")
+#app
+  .container-fluid
+    table.table.table-bordered
+      colgroup
+        col(width="50%")
+        col(width="50%")
+      thead
+        tr
+          th Form
+          th Value
+      tbody
+        tr
+          td
+            .form-group.mb-0
+              label Text
+              input.form-control(v-model="message" type="text")
+          td {{ message }}
+        tr
+          td
+            .form-group.mb-0
+              label Textarea
+              textarea.form-control(v-model="description")
+          td
+            pre.mb-0 {{ description }}
+        tr
+          td
+            .form-group.mb-0
+              label select
+              select.form-control(v-model="framework")
+                option(value="vue.js") Vue.js
+                option(value="React") React
+                option(value="Angular") Angular
+          td
+            pre.mb-0 {{ framework }}
+        tr
+          td
+            .form-group.mb-0
+              label checkbox
+              p.mb-1
+                input#check2(
+                  v-model="tools.babel"
+                  type="checkbox")
+                label(for=chekc2) Babel
+              p.mb-1
+                input#check3(
+                  v-model="tools.yarn"
+                  type="checkbox")
+                label(for=chekc3) yarn
+              p.mb-1
+                input#check1(
+                  v-model="tools.webpack"
+                  type="checkbox")
+                label(for=chekc1) webpack
+          td
+            pre.mb-0 {{ tools }}
+script(src="https://cdn.jsdelivr.net/npm/vue")
+script. 
+  const app = new Vue({
+    el:'#app',
+    data:{
+      message: '',
+      description: 'This is textarea.',
+      framework: 'vue.js',
+      tools: {webpack: true, babel: false,yarn:false}
+    }
+  })
