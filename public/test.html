@@ -1,0 +1,107 @@
+
+<style>
+  .container-fluid {
+    padding: 1rem 2%;
+  }
+  .table {
+    table-layout: fixed;
+  }
+  .table tr td {
+    vertical-align: middle;
+  }
+  
+  .table tr td {
+    word-wrap: break-word;
+  }
+  input[type="file"] {
+    overflow: hidden;
+  }
+</style>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+<div id="app">
+  <div class="container-fluid">
+    <table class="table table-bordered">
+      <colgroup>
+        <col width="50%"/>
+        <col width="50%"/>
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Form</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="form-group mb-0">
+              <label>Text</label>
+              <input class="form-control" v-model="message" type="text"/>
+            </div>
+          </td>
+          <td>{{ message }}</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="form-group mb-0">
+              <label>Textarea</label>
+              <textarea class="form-control" v-model="description"></textarea>
+            </div>
+          </td>
+          <td>
+            <pre class="mb-0">{{ description }}</pre>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="form-group mb-0">
+              <label>select</label>
+              <select class="form-control" v-model="framework">
+                <option value="vue.js">Vue.js</option>
+                <option value="React">React</option>
+                <option value="Angular">Angular</option>
+              </select>
+            </div>
+          </td>
+          <td>
+            <pre class="mb-0">{{ framework }}</pre>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="form-group mb-0">
+              <label>checkbox</label>
+              <p class="mb-1">
+                <input id="check2" v-model="tools.babel" type="checkbox"/>
+                <label>Babel</label>
+              </p>
+              <p class="mb-1">
+                <input id="check3" v-model="tools.yarn" type="checkbox"/>
+                <label>yarn</label>
+              </p>
+              <p class="mb-1">
+                <input id="check1" v-model="tools.webpack" type="checkbox"/>
+                <label>webpack</label>
+              </p>
+            </div>
+          </td>
+          <td>
+            <pre class="mb-0">{{ tools }}</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+  const app = new Vue({
+    el:'#app',
+    data:{
+      message: '',
+      description: 'This is textarea.',
+      framework: 'vue.js',
+      tools: {webpack: true, babel: false,yarn:false}
+    }
+  })
+</script>

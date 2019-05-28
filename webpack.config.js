@@ -3,14 +3,18 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  mode: "none",
+  mode: 'production',
+  entry:'.src/js/script',
   output: {
-    path: path.resolve(__dirname, 'public'),
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, 'public/js'),
+    filename: 'script.min.js'
   },
   module: {
     rules: [
-      { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
+      { test: /\.js$/, loader: 'babel-loader', options:{
+        presets:['@babel/preset-env'],
+      }
+    },
       { test: /\.vue$/, loader: 'vue-loader' },
       { test: /\.css$/, loader: ['vue-style-loader', 'css-loader'] },
       {
@@ -29,6 +33,7 @@ module.exports = {
       }
     ]
   },
+  devtool: 'source-map',
   plugins: [
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
