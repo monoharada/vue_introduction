@@ -1,0 +1,27 @@
+link(rel="stylesheet", href="../scss/190529.scss")
+#app
+  .container
+    h1 Welcome to Vue
+    ul.tab
+      li.tab-item
+        button(@click="toggle(1)") tab 1
+      li.tab-item
+        button(@click="currentTab = 2") tab 2
+      li.tab-item
+        button(@click="toggle(3)") tab 3
+    section.tab-content(v-show="currentTab === 1")
+      h2 Tab 1
+      p
+        | Lorem ipsum dolor sit amet, te sed dolor aliquam scripserit, ut blandit recteque ius, eripuit invenire ne duo.
+    section.tab-content(v-show="currentTab === 2")
+      h2 Tab 2
+      p
+        | At cum scripta admodum, ius habeo postea deterruisset ne, admodum oporteat eu vis.
+    section.tab-content(v-show="currentTab === 3")
+      h2 Tab 3
+      p Iuvaret efficiantur at est, eos alienum argumentum ei, nullam imperdiet ad sed.
+
+
+script(src="https://cdn.jsdelivr.net/npm/vue")
+script(src="../js/190529.js")
+

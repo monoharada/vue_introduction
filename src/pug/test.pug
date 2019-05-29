@@ -1,4 +1,4 @@
-style. 
+style.
   .container-fluid {
     padding: 1rem 2%;
   }
@@ -71,14 +71,61 @@ link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.
                 label(for=chekc1) webpack
           td
             pre.mb-0 {{ tools }}
+        tr
+          td
+            .form-group.mb-0
+              label radio
+              p.mb-1
+                input(v-model="lang" type="radio" id="r1" value="js")
+                label(for=r1) good
+              p.mb-1
+                input(v-model="lang" type="radio" id="r2" value="php")
+                label(for=r2) php
+              p.mb-1
+                input(v-model="lang" type="radio" id="r3" value="html")
+                label(for=r3) html
+          td {{ lang }}
+        tr
+          td
+            .form-group.mb-0
+              label file
+              input.form-control(
+                v-model="file"
+                type="file"
+                accept="image/*")
+          td
+            pre.mb-0 {{ file }}
+        tr
+          td
+            .form-group.mb-0
+              label Date
+              input.form-control(
+                v-model="birthday"
+                type="date")
+          td
+            pre.mb-0 {{ birthday}}
+        tr
+          td
+            .form-group.mb-0
+              label Range
+              input.form-control(
+                v-model="range"
+                type="range"
+                min="0"
+                max="10")
+          td {{ '🍔'.repeat(range) }}{{ range + 'バーガー' }}
 script(src="https://cdn.jsdelivr.net/npm/vue")
-script. 
+script.
   const app = new Vue({
     el:'#app',
     data:{
       message: '',
       description: 'This is textarea.',
       framework: 'vue.js',
-      tools: {webpack: true, babel: false,yarn:false}
+      tools: {webpack: true, babel: false,yarn:false},
+      lang: 'php',
+      file: null,
+      birthday:'1981-06-02',
+      range: 3
     }
   })
