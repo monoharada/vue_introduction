@@ -1,0 +1,41 @@
+link(rel="stylesheet", href="../scss/190530.scss")
+#app
+  .container
+    h1 Vue form Sample
+    .form-content(v-if="submitted")
+      h2 フォームが送信されました
+      dl
+        dt 満足度：
+        dd {{'💫'.repeat(rating)}}
+        dt コメント
+        dd
+          pre {{comment}}
+      button(type="button" @click.prevent="clearForm") クリア
+    form(@submit.prevent="onSubmit")
+      .form-group
+        label(for='rating') 満足度
+        select#rating(v-model="rating")
+          option(value="0") No star
+          option(value="1") 💫
+          option(value="2") 💫💫
+          option(value="3") 💫💫💫
+          option(value="4") 💫💫💫💫
+          option(value="5") 💫💫💫💫💫
+      .form-group
+        label#comment コメント
+        textarea#comment(v-model="comment")
+        p.error-msg(v-if="error") {{error}}
+      button(type="submit") 送信
+  .container
+    h1 Vue.js Image Preview
+    input(
+      type='file'
+      @change="onFileChange"
+      accept="image/*")
+    output
+      img(:src="previewUrl" v-if="previewUrl")
+      p(v-else) No image...
+//- script(src="https://cdn.jsdelivr.net/npm/vue")
+
+script(src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js")
+script(src="../js/190530.js")
