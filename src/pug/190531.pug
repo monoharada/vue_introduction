@@ -1,0 +1,15 @@
+link(rel="stylesheet", href="../scss/190531.scss")
+#app
+  .container
+    p
+      input(type="number" v-model.number="left")
+      | +
+      input(type="number" v-model.number="right")
+      | =
+      | {{ total }}
+    p.message(v-if="isComputedCalled") Computedが呼び出されました。
+
+script(src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.js")
+script(src="../js/190531.js")
+
