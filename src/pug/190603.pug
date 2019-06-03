@@ -1,0 +1,17 @@
+link(rel="stylesheet", href="../scss/190603.scss")
+#app
+  container
+    h1 Vue.js Form Validation
+    .form-group
+      label(for="email") メールアドレス
+        small ※必須、半角英数のみ
+      input#email(type="text" v-model="email")
+      p.error(v-if="error.email") {{error.email}}
+    .form-group
+      label(for="username") ユーザー名
+        small ※必須、半角英数のみ
+      input#username(type="text" v-model="username")
+      p.error(v-if="error.username") {{error.username}}
+script(src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js")
+script(src="../js/190603.js")
+

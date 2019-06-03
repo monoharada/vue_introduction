@@ -22,7 +22,7 @@ const app = new Vue({
       this.rating = 3;
       this.comment = '';
     },
-    onFileChange(event) {
+    onFileChange() {
       const file = event.target.files[0];
       if (!file) {
         return false;
