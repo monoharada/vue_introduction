@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script>
+      function line_message() {
+        var order_sea_food = document.order.sea_food.value;
+        var line_url = "line://msg/text/" + order_sea_food;
+        location.href = line_url;
+      }
+    </script>
+  </head>
+  <body>
+    シーフード
+    <form name="order">
+      <select name="sea_food">
+        <option value="">0</option>
+        <option value="シーフード1枚">1</option>
+        <option value="シーフード2枚">2</option>
+        <option value="シーフード3枚">3</option>
+      </select>
+      <br />
+      <input type="button" value="LINEで送る" onclick="line_message() " />
+    </form>
+  </body>
+  <html></html>
+</html>
