@@ -1,0 +1,57 @@
+link(rel="stylesheet" href="../scss/190612.scss")
+link(rel="stylesheet" href="../scss/190610.scss")
+main.large
+  h1 URLに?id=(ID)&amp;name=(名前)&amp;age=(年齢)を<br>付与してアクセスしてください。
+  table
+    tr
+      th ID
+      td.id
+    tr
+      th name
+      td.name
+    tr
+      th age
+      td.age
+  .name_container
+    label
+      | 姓
+      input#familyNameText.text(type="text")
+    label
+      | 名
+      input#firstNameText.text(type="text")
+  p#fullname
+  .code
+  input(type="button" onclick="window.open('http://www.yahoo.co.jp/','_blank','')")
+
+  script(src="../js/190614.js")
+  script(src="../js/190614_2.js")
+
+-
+  var arr = [
+    {
+      title : 'hoge1',
+      description : 'fugafuga1.',
+      img : './hoge1.jpg',
+      date : '2017/12/8'
+    },
+    {
+      title : 'hoge2',
+      description : 'fugafuga2.',
+      img : './hoge2.jpg',
+      date : '2017/12/9'
+    },
+    {
+      title : 'hoge3',
+      description : 'fugafuga3.',
+      img : './hoge3.jpg',
+      date : '2017/12/10'
+    }
+  ];
+//-  取り出し
+ul
+  each val in arr
+    li
+      h2 #{val.title}
+      p #{arr.description}
+      img(src=arr.img)
+      p #{arr.date}
