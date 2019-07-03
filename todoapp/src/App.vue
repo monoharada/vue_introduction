@@ -1,34 +1,38 @@
 <template lang="pug">
   div
     h3 My Todo
-    input(v-model="newTodo" placeholder="Input here...")
-    button(@click="addTodo()") Add
-
-    h5 Todo List
-    ul
-      li(v-for="(todo,i) in todos" v-bind:key="i")
-        | {{todo}}
-        button(v-on:click="deleteTodo(i)") Del
+    router-view
+    //- todo-form(@add="addTodo($event)")
+    //- todo-list(v-bind:todos="todos",@delete="deleteTodo($event)")
 </template>
-<script>
-export default {
-  data() {
-    return {
-      todos: ["hoge", "fuga", "boo"],
-      newTodo: ""
-    };
-  },
-  methods: {
-    addTodo() {
-      // if (this.newTodo === "") return;
-      this.todos.push(this.newTodo);
-      this.newTodo = "";
-    },
-    deleteTodo(i) {
-      this.todos.splice(i, 1);
-    }
-  }
-};
+// <script>
+// import TodoForm from "./components/TodoForm";
+// import TodoList from "./components/TodoList";
+// export default {
+//   data() {
+//     return {
+//       todos: []
+//     };
+//   },
+//   created() {
+//     this.todos = JSON.parse(localStorage.getItem("todos")) || [];
+//   },
+//   components: {
+//     "todo-form": TodoForm,
+//     "todo-list": TodoList
+//   }
+//   // methods: {
+//   //   addTodo(newTodo) {
+//   //     this.todos.push(newTodo);
+//   //     localStorage.setItem("todos", JSON.stringify(this.todos));
+//   //   },
+//   //   deleteTodo(i) {
+//   //     this.todos.splice(i, 1);
+//   //     localStorage.setItem("todos", JSON.stringify(this.todos));
+//   //   }
+//   // }
+// };
+//
 </script>
 
 
