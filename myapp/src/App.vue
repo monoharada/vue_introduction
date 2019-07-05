@@ -1,38 +1,30 @@
-<template>
-  <v-app>
-    <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn
-        flat
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">Latest Release</span>
-      </v-btn>
-    </v-toolbar>
-
-    <v-content>
-      <HelloWorld/>
-    </v-content>
-  </v-app>
+<template lang="pug">
+  v-list
+    template(v-for="todo in todos")
+      v-list-tile(v-bind:key="todo.id")
+        v-list-tile-content  {{ todo.text }}
+        v-list-tile-action
+          v-btn(flat="" icon="" v-on:click="deleteTodo(todo.id)")
+            v-icon filter_{{todo.id}}
+      v-divider(v-bind:key="todo.id")
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld'
 
+<script>
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  },
-  data () {
+  data() {
     return {
-      //
+      todos: [
+        { id: 1, text: "todo 1" },
+        { id: 2, text: "todo 2" },
+        { id: 3, text: "todo 3" }
+      ]
+    };
+  },
+  methods: {
+    deleteTodo(id) {
+      this.todos = this.todos.filter(todo => todo.id !== id);
     }
   }
-}
+};
 </script>
