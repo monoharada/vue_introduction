@@ -1,0 +1,52 @@
+body {
+  background-size: cover;
+  // background: url("../common/bg_nature.jpg") center;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal .inner {
+  display: block;
+  display: flex;
+  width: 100%;
+  width: 960px;
+  max-width: 600px;
+  height: 100%;
+  height: 540px;
+  max-height: 400px;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 10px;
+  animation: fadeInAnimation 200ms ease-out;
+  -webkit-backdrop-filter: blur(16px);
+  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  color: #333;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+@keyframes {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

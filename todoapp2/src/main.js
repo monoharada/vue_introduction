@@ -3,6 +3,8 @@ import './plugins/vuetify'
 import App from './App.vue'
 import router from './router'
 
+import 'material-icons/iconfont/material-icons.css'
+
 Vue.config.productionTip = false
 
 new Vue({

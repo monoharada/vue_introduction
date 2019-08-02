@@ -1,24 +1,23 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import TodoList from './components/TodoList'
-import TodoForm from './components/TodoForm'
+import Vue from "vue";
+import Router from "vue-router";
+import TodoList from "./components/TodoList";
+import TodoForm from "./components/TodoForm";
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
+      path: "/",
       component: TodoList
     },
     {
-      path: '/todos/add',
+      path: "/todos/add",
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: TodoForm
     }
   ]
-})
+});

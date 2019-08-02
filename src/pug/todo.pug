@@ -1,0 +1,8 @@
+#app
+  h2 TODO list
+  form(v-on:submit.prevent="onSubmit")
+    input(type="text" v-model="newItem")
+    button(@click="addItem") add
+  pre {{$data}}
+script(src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js")
+script(src="../js/todo.js")
