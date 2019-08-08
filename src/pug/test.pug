@@ -1,131 +1,102 @@
-style.
-  .container-fluid {
-    padding: 1rem 2%;
-  }
-  .table {
-    table-layout: fixed;
-  }
-  .table tr td {
-    vertical-align: middle;
-  }
+h1 h1タイトル
+h2 h2タイトル
+h3 h3タイトル
+h4 h4タイトル
+h5 h5タイトル
+h6 h6タイトル
+ul
+  li リストアイテム
+  li リストアイテム
+  li リストアイテム
+ol
+  li 順序のあるリスト
+  li 順序のあるリスト
+  li 順序のあるリスト
+p 画像
+figure
+  img(src="https://placehold.jp/1500x800.png", alt="")
+  figcaption 大きい画像
+figure
+  img(src="https://placehold.jp/50x50.png", alt="")
+  figcaption 小さ い画像
+p ここからテーブル
+table
+  tr
+    th 名前
+    th 年齢
+    th 血液型
+  tr
+    td さとう
+    td 19
+    td A型
+  tr
+    td のざわ
+    td 24
+    td O型
+  tr
+    td まなべ
+    td 20
+    td B型
+p 横にヘッドが付くテーブル
+table
+  tr
+    th 名前
+    td さとう
+    td のざわ
+    td まなべ
+  tr
+    th 年齢
+    td 19
+    td 24
+    td 20
+  tr
+    th 血液型
+    td A型
+    td O型
+    td B型
+p ここからフォーム
+form(action="/" method="post")
+  label.label(for="name") 名前
+  input#name(type="text" name="name")
+  label.label(for="e-mail") メール
+  input#e-mail(type="email" name="email")
+  label.label(for="message") 本文
+  textarea#message(rows="4" placeholder="ご意見をお寄せ下さい。" name="comment")
+  label
+    input(type="checkbox" name="magazine" checked="")
+    | メルマガを希望する
+  input(type="submit")
 
-  .table tr td {
-    word-wrap: break-word;
-  }
-  input[type="file"] {
-    overflow: hidden;
-  }
-link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T", crossorigin="anonymous")
-#app
-  .container-fluid
-    table.table.table-bordered
-      colgroup
-        col(width="50%")
-        col(width="50%")
-      thead
-        tr
-          th Form
-          th Value
-      tbody
-        tr
-          td
-            .form-group.mb-0
-              label Text
-              input.form-control(v-model="message" type="text")
-          td {{ message }}
-        tr
-          td
-            .form-group.mb-0
-              label Textarea
-              textarea.form-control(v-model="description")
-          td
-            pre.mb-0 {{ description }}
-        tr
-          td
-            .form-group.mb-0
-              label select
-              select.form-control(v-model="framework")
-                option(value="vue.js") Vue.js
-                option(value="React") React
-                option(value="Angular") Angular
-          td
-            pre.mb-0 {{ framework }}
-        tr
-          td
-            .form-group.mb-0
-              label checkbox
-              p.mb-1
-                input#check2(
-                  v-model="tools.babel"
-                  type="checkbox")
-                label(for=chekc2) Babel
-              p.mb-1
-                input#check3(
-                  v-model="tools.yarn"
-                  type="checkbox")
-                label(for=chekc3) yarn
-              p.mb-1
-                input#check1(
-                  v-model="tools.webpack"
-                  type="checkbox")
-                label(for=chekc1) webpack
-          td
-            pre.mb-0 {{ tools }}
-        tr
-          td
-            .form-group.mb-0
-              label radio
-              p.mb-1
-                input(v-model="lang" type="radio" id="r1" value="js")
-                label(for=r1) good
-              p.mb-1
-                input(v-model="lang" type="radio" id="r2" value="php")
-                label(for=r2) php
-              p.mb-1
-                input(v-model="lang" type="radio" id="r3" value="html")
-                label(for=r3) html
-          td {{ lang }}
-        tr
-          td
-            .form-group.mb-0
-              label file
-              input.form-control(
-                v-model="file"
-                type="file"
-                accept="image/*")
-          td
-            pre.mb-0 {{ file }}
-        tr
-          td
-            .form-group.mb-0
-              label Date
-              input.form-control(
-                v-model="birthday"
-                type="date")
-          td
-            pre.mb-0 {{ birthday}}
-        tr
-          td
-            .form-group.mb-0
-              label Range
-              input.form-control(
-                v-model="range"
-                type="range"
-                min="0"
-                max="10")
-          td {{ '🍔'.repeat(range) }}{{ range + 'バーガー' }}
-script(src="https://cdn.jsdelivr.net/npm/vue")
-script.
-  const app = new Vue({
-    el:'#app',
-    data:{
-      message: '',
-      description: 'This is textarea.',
-      framework: 'vue.js',
-      tools: {webpack: true, babel: false,yarn:false},
-      lang: 'php',
-      file: null,
-      birthday:'1981-06-02',
-      range: 3
-    }
-  })
+select#top_sort_select.form-cmn-select-strong(name="top_srch_cd")
+  option(value="01" selected="") おすすめ順
+  option(value="02") 新着
+  option(value="03") 締切が近い
+  option(value="04") 報酬が高い
+  option(value="05") 時間が短い
+
+.mod-cmn-search-body
+  ul.mod-cmn-search-body-lists
+    li.mod-cmn-search-body-lists-item
+      input#search-107.form-cmn-check-single(type="checkbox" name="prj_major_cate_cd[]" value="07")
+      label(for="search-107") アンケート
+    li.mod-cmn-search-body-lists-item
+      input#search-108.form-cmn-check-single(type="checkbox" name="prj_major_cate_cd[]" value="08")
+      label(for="search-108") モニター
+    li.mod-cmn-search-body-lists-item
+      input#search-101.form-cmn-check-single(type="checkbox" name="prj_major_cate_cd[]" value="01")
+      label(for="search-101") 口コミ・記事
+    li.mod-cmn-search-body-lists-item
+      input#search-102.form-cmn-check-single(type="checkbox" name="prj_major_cate_cd[]" value="02")
+      label(for="search-102") データ入力
+    li.mod-cmn-search-body-lists-item
+      input#search-104.form-cmn-check-single(type="checkbox" name="prj_major_cate_cd[]" value="04")
+      label(for="search-104") 写真・動画投稿
+    li.mod-cmn-search-body-lists-item
+      input#search-105.form-cmn-check-single(type="checkbox" name="prj_major_cate_cd[]" value="05")
+      label(for="search-105") アイデア募集
+    li.mod-cmn-search-body-lists-item
+      input#search-110.form-cmn-check-single(type="checkbox" name="prj_major_cate_cd[]" value="10")
+      label(for="search-110") 短期・単発バイト
+    li.mod-cmn-search-body-lists-item
+      input#search-106.form-cmn-check-single(type="checkbox" name="prj_major_cate_cd[]" value="06")
+      label(for="search-106") その他
